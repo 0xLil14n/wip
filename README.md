@@ -1,6 +1,34 @@
-# Create T3 App
+# [WiP]
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+## TODO
+
+- create db with outline
+- find an image/content/video hosting solution for posts
+
+## notes
+
+- posts get [all of this for free from lens](https://api-v2-docs.lens.xyz/#definition-Post)
+
+### DB outline
+
+```
+type User = {
+    id: string
+    wips: WiP[]
+}
+
+type WiP = {
+    id: string
+    startedAt: Date
+    posts: Post[]
+    userId: string
+}
+
+type Post = {
+    lensPublicationId: string
+    wipId: string
+}
+```
 
 ## What's next? How do I make an app with this?
 
