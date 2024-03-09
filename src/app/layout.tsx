@@ -5,6 +5,8 @@ import { Inter } from "next/font/google";
 import { TRPCReactProvider } from "@/trpc/react";
 import Web3ModalProvider from "./Web3Modal";
 import LensProvider from "./LensProvider";
+import PrivyProvider from "./PrivyProvider";
+import { Nav } from "./_components/nav";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -27,7 +29,12 @@ export default function RootLayout({
       <body className={`font-sans ${inter.variable}`}>
         <TRPCReactProvider>
           <Web3ModalProvider>
-            <LensProvider>{children}</LensProvider>
+            <PrivyProvider>
+              <LensProvider>
+                <Nav />
+                {children}
+              </LensProvider>
+            </PrivyProvider>
           </Web3ModalProvider>
         </TRPCReactProvider>
       </body>
