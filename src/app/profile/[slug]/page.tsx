@@ -1,4 +1,5 @@
 "use client";
+import Wip from "@/app/_components/wip";
 import {
   useProfile,
   usePublications,
@@ -23,20 +24,24 @@ export default function Profile({
   return (
     <div>
       <div className="p-14">
-        {profile?.metadata?.picture?.__typename === "ImageSet" && (
-          <img
-            width="200"
-            height="200"
-            alt={profile.handle?.fullHandle}
-            className="rounded-xl"
-            src={profile.metadata.picture.optimized?.uri}
-          />
-        )}
-        <h1 className="my-3 text-3xl">
-          {profile?.handle?.localName}.{profile?.handle?.namespace}
-        </h1>
-        <h3 className="mb-4 text-xl">{profile?.metadata?.bio}</h3>
-
+        <div className="direction-row mb-8 flex max-w-3xl gap-10">
+          {profile?.metadata?.picture?.__typename === "ImageSet" && (
+            <img
+              width="200"
+              height="200"
+              alt={profile.handle?.fullHandle}
+              className="rounded-xl"
+              src={profile.metadata.picture.optimized?.uri}
+            />
+          )}
+          <div>
+            <h1 className="my-3 text-3xl">
+              {profile?.handle?.localName}.{profile?.handle?.namespace}
+            </h1>
+            <h3 className="mb-4 text-xl">{profile?.metadata?.bio}</h3>
+          </div>
+        </div>
+        <Wip />
         {profile && <Publications profile={profile} />}
       </div>
     </div>

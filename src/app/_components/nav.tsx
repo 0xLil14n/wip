@@ -8,6 +8,7 @@ import Link from "next/link";
 // import { ModeToggle } from "@/components/dropdown";
 import { ChevronRight, Droplets, LogOut } from "lucide-react";
 import * as React from "react";
+import { usePrivy } from "@privy-io/react-auth";
 // import { Slot } from "@radix-ui/react-slot";
 // import { cva, type VariantProps } from "class-variance-authority";
 
@@ -76,20 +77,18 @@ export function Nav() {
           </button>
         )}
 
-        <button disabled={disableLogin} onClick={login}>
-          Log in
-        </button>
+        {ready && (
+          <button disabled={disableLogin} onClick={login}>
+            Log in
+          </button>
+        )}
         {address && (
           <button onClick={disconnect} variant="secondary" className="mr-4">
             Disconnect
             <LogOut className="ml-3 h-4 w-4" />
           </button>
         )}
-        {/* <ModeToggle /> */}
       </div>
     </nav>
   );
-}
-function usePrivy(): { ready: any; authenticated: any; login: any } {
-  throw new Error("Function not implemented.");
 }

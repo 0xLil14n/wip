@@ -1,3 +1,54 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "Maxi";
+  font-weight: 300;
+  font-style: normal;
+  font-display: block;
+  src:
+    url("/fonts/maxi-sharp/font.woff2") format("woff2"),
+    url("/fonts/maxi-sharp/font.woff") format("woff");
+}
+@font-face {
+  font-family: "Maxi";
+  font-weight: 300;
+  font-style: italic;
+  font-display: block;
+  src:
+    url("/fonts/maxi-round/font.woff2") format("woff2"),
+    url("/fonts/maxi-round/font.woff") format("woff");
+}
+@font-face {
+  font-family: "Maxi";
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+  src:
+    url("/fonts/maxi-round/regular.woff2") format("woff2"),
+    url("/fonts/maxi-round/regular.woff") format("woff");
+}
+@font-face {
+  font-family: "Maxi";
+  font-weight: 400;
+  font-style: italic;
+  font-display: block;
+  src:
+    url("/fonts/maxi-sharp/font.woff2") format("woff2"),
+    url("/fonts/maxi-sharp/font.woff") format("woff");
+}
+@font-face {
+  font-family: "Maxi";
+  font-weight: bold;
+  font-style: normal;
+  font-display: block;
+  src:
+    url("/fonts/maxi-sharp/font.woff2") format("woff2"),
+    url("/fonts/maxi-sharp/font.woff") format("woff");
+}
+
+/* Hide the recaptcha badge */
+.grecaptcha-badge {
+  visibility: hidden;
+}

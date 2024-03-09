@@ -12,7 +12,6 @@ export default function Home() {
     orderBy: ExploreProfilesOrderByType.MostFollowers,
     limit: LimitType.TwentyFive,
   });
-  console.log("data: ", data);
 
   return (
     <div className="p-20">
